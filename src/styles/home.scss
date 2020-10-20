@@ -1,0 +1,27 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+#t-light{
+    width: 55px;
+    padding: 5px;
+    height: 150px;
+    margin: 100px auto;
+    background-color: #000;
+}
+.light{
+    width: 45px;
+    height: 45px;
+    margin: 2px auto;
+    border-radius: 50%;
+}
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+.yellow{
+    background-color: yellow;
+}
+.active{
+    box-shadow: 0 0 15px 10px #feffd1, 0 0 15px 15px #f4ffd5, 0 0 15px 15px #ffff9d;
+}

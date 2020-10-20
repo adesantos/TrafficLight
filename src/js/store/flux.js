@@ -3,35 +3,44 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			demo: [
 				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
+					id: 0,
+					color: "green",
+					isActive: ""
 				},
 				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
+					id: 1,
+					color: "yellow",
+					isActive: ""
+				},
+				{
+					id: 2,
+					color: "red",
+					isActive: ""
 				}
 			]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+				getActions().changeLight(0, "");
 			},
 			loadSomeData: () => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
 			},
-			changeColor: (index, color) => {
+			changeLight: (index, val) => {
 				//get the store
 				const store = getStore();
 
 				//we have to loop the entire demo array to look for the respective index
 				//and change its color
 				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
+					if (i === index) {
+						elm.isActive = val;
+					} else {
+						elm.isActive = "";
+					}
 					return elm;
 				});
 
